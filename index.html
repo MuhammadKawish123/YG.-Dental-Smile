@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>YG Dental Smile | Smile Makeovers in Miami, FL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d2a3a;--lagoon:#0f6e7a;--aqua:#bfe9e6;--sand:#fbf6ee;--coral:#ff6b6b;--surface:#fff;--text:#0d2a3a;--muted:#4a6270;--line:#d9e6e4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#0b1d28;--surface:#10303f;--text:#eaf5f4;--muted:#a9c3c8;--line:#1d4455;--aqua:#13404d}}
+:root[data-theme="dark"]{--sand:#0b1d28;--surface:#10303f;--text:#eaf5f4;--muted:#a9c3c8;--line:#1d4455;--aqua:#13404d}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--sand);color:var(--text);font:400 1.05rem/1.65 Figtree,system-ui,sans-serif;cursor:none}
+@media(hover:none){body{cursor:auto}.cur{display:none}}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:2px solid var(--coral);border-radius:50%;pointer-events:none;z-index:9999;transition:width .2s,height .2s,margin .2s,background .2s}
+.cur.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:#ff6b6b33}
+@media(hover:hover){a,button,summary,select,.seg span{cursor:none}}
+.cur::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;background:var(--coral);border-radius:50%}
+header{position:fixed;inset:0 0 auto;z-index:100;padding-top:calc(14px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));height:calc(80px + env(safe-area-inset-top,0px));background:var(--sand);box-shadow:0 1px 0 var(--line)}
+.logo{font:700 1.4rem/1 "Bodoni Moda",Georgia,serif;text-decoration:none;letter-spacing:.02em;white-space:nowrap;flex:0 0 auto;position:relative;z-index:2;color:var(--text)}.logo i{color:var(--coral)}
+.links{display:flex;align-items:center;gap:clamp(10px,1.5vw,30px);margin-left:auto;margin-right:clamp(10px,1.5vw,20px)}
+.links a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:clamp(.95rem,1.3vw,1.12rem);padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.links a:hover{border-color:var(--coral)}
+.links a.bk{background:var(--coral);color:#fff;padding:9px 20px;border-radius:99px;border-bottom:0;font-weight:600}
+@media(max-width:900px){.links{position:absolute;left:0;right:0;top:100%;margin:0;padding:8px 16px;gap:20px;overflow-x:auto;background:color-mix(in srgb,var(--sand) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line)}.links a{font-size:1.05rem}.links a.bk{padding:6px 14px}}
+.mo .links{display:none}
+.burger{width:46px;height:46px;border:0;background:var(--ink);border-radius:50%;display:grid;place-content:center;gap:5px;cursor:none}
+.burger span{display:block;width:20px;height:2px;background:#fff;transition:.3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+nav{position:fixed;inset:0;z-index:40;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 10vw;clip-path:circle(0 at calc(100% - 44px) 47px);transition:clip-path .6s cubic-bezier(.7,0,.2,1);visibility:hidden}
+nav.open{clip-path:circle(150% at calc(100% - 44px) 47px);visibility:visible}
+nav a{font:500 clamp(2rem,7vw,3.6rem)/1.3 "Bodoni Moda",serif;text-decoration:none}
+nav a:hover{color:var(--coral);font-style:italic}
+nav small{margin-top:1.5rem;opacity:.7}
+/* scroll film */
+.film{height:420vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--ink)}
+.scene{position:absolute;inset:0;opacity:0;will-change:transform,opacity}
+.scene svg,.stage video{width:100%;height:100%;display:block}
+.stage video{position:absolute;inset:0;object-fit:cover;display:none}
+.caption{position:absolute;left:max(24px,6vw);top:calc(110px + env(safe-area-inset-top,0px));bottom:max(12vh,64px);width:min(640px,calc(100% - 48px));color:#0d2a3a;z-index:5;display:grid;align-content:end}
+.caption h1{font-size:clamp(2.2rem,5vw,4.2rem);color:#0d2a3a}
+.caption p{margin:0;font-size:1.1rem;max-width:44ch;color:#2b4655}
+.eb{display:block;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;color:#0f6e7a;margin-bottom:.7em}
+@media(max-width:700px){.caption{top:calc(140px + env(safe-area-inset-top,0px));bottom:max(10vh,56px)}.caption h1{font-size:1.9rem}.caption p{font-size:1rem}.cap{padding:16px 18px}.hint{display:none}}
+.cap{grid-area:1/1;align-self:end;background:rgba(251,246,238,.9);border-left:6px solid #ff6b6b;border-radius:20px;padding:clamp(18px,3vw,32px);box-shadow:0 18px 50px #0d2a3a40;backdrop-filter:blur(8px);transition:opacity .5s,transform .5s}
+.hint{position:absolute;right:24px;bottom:28px;color:#fff;z-index:3;font-size:.9rem;display:flex;gap:10px;align-items:center}
+.hint b{width:2px;height:46px;background:#fff6;position:relative;overflow:hidden}
+.hint b::after{content:"";position:absolute;left:0;top:-20px;width:2px;height:20px;background:#fff;animation:dr 1.6s infinite}
+@keyframes dr{to{top:46px}}
+.bar{position:absolute;left:0;bottom:0;height:4px;background:var(--coral);z-index:4;width:0}
+.btn{display:inline-block;background:var(--coral);color:#fff;border:0;padding:.95em 1.7em;border-radius:99px;font-weight:600;text-decoration:none;cursor:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px #ff6b6b55}
+.btn.alt{background:transparent;border:2px solid currentColor;color:inherit}
+section.s{padding:clamp(70px,11vw,140px) max(22px,6vw)}
+.wrap{max-width:1160px;margin:0 auto}
+.lead{max-width:56ch;color:var(--muted)}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.card h3{font-size:1.5rem}.card p{margin:0;color:var(--muted)}
+.card svg{width:44px;height:44px;margin-bottom:14px;stroke:var(--lagoon);fill:none;stroke-width:1.6}
+/* before after */
+.ba{position:relative;aspect-ratio:4/3;border-radius:26px;overflow:hidden;background:#222}
+.ba>div{position:absolute;inset:0}
+.ba svg{width:100%;height:100%;display:block}
+.ba .aft{clip-path:inset(0 100% 0 0)}
+.ba .line{position:absolute;top:0;bottom:0;left:0;width:3px;background:#fff;box-shadow:0 0 12px #0008;z-index:2}
+.ba em{position:absolute;top:14px;z-index:3;background:#0d2a3acc;color:#fff;padding:2px 12px;border-radius:99px;font-style:normal;font-size:.85rem}
+.ba em.l{left:14px}.ba em.r{right:14px}
+.bacap{margin:10px 4px 0;color:var(--muted);font-size:.95rem}
+/* doctor */
+.doc{display:grid;gap:clamp(28px,5vw,70px);grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--aqua),var(--lagoon));display:grid;place-items:end center;overflow:hidden}
+.portrait svg{width:80%}
+.dark{background:var(--ink);color:#fff}.dark .lead,.dark .card p{color:#b9d3d6}.dark .card{background:#12384b;border-color:#1d4d63}.dark .card svg{stroke:var(--aqua)}
+/* reviews */
+.rv{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
+.rv blockquote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
+.rv .st{color:#f5a623;letter-spacing:2px}
+#why h2::after,#reviews h2::after{content:"";display:block;width:90px;height:5px;border-radius:5px;background:linear-gradient(90deg,#ff6b6b,#0f6e7a);margin-top:14px}
+#why,#reviews{border-top:6px solid;border-image:linear-gradient(90deg,#ff6b6b,#0f6e7a,#bfe9e6) 1}
+#why{background:linear-gradient(180deg,var(--aqua),var(--sand) 75%)}
+#why .card{border-top:6px solid var(--lagoon);box-shadow:0 14px 34px #0d2a3a14}
+#why .card:nth-child(2){border-top-color:var(--coral)}
+#why .card:nth-child(3){border-top-color:#2f9a7f}
+#why .card:nth-child(4){border-top-color:#f5a623}
+#why .card svg{width:56px;height:56px;padding:10px;border-radius:16px;background:var(--aqua)}
+#why .card:nth-child(2) svg{stroke:var(--coral)}#why .card:nth-child(3) svg{stroke:#2f9a7f}#why .card:nth-child(4) svg{stroke:#c98410}
+#reviews{background:linear-gradient(180deg,var(--sand),var(--aqua))}
+#reviews .rv blockquote{position:relative;border-left:6px solid var(--coral);box-shadow:0 14px 34px #0d2a3a14}
+#reviews .rv blockquote:nth-child(even){border-left-color:var(--lagoon)}
+#reviews .rv blockquote::before{content:"\201C";position:absolute;right:18px;top:2px;font:700 4.5rem/1 "Bodoni Moda",Georgia,serif;color:var(--coral);opacity:.25}
+#reviews form{box-shadow:inset 0 6px 0 var(--coral),0 14px 34px #0d2a3a14}
+#book{border-top:6px solid;border-image:linear-gradient(90deg,#ff6b6b,#0f6e7a,#bfe9e6) 1}
+#book h2::after{content:"";display:block;width:90px;height:5px;border-radius:5px;background:linear-gradient(90deg,#ff6b6b,#bfe9e6);margin-top:14px}
+#bf{box-shadow:inset 0 6px 0 var(--coral),0 20px 50px #0005}
+#bf input,#bf select,#bf textarea{border:1.5px solid #9fd8d6}
+#bf input:focus,#bf select:focus,#bf textarea:focus{border-color:var(--coral)}
+#bf label{border-left:3px solid var(--lagoon);padding-left:10px}
+#bf .seg label{border-left:0;padding-left:0}
+#book .hrs td:first-child{border-left:4px solid var(--coral);padding-left:12px}
+#book .hrs tr:nth-child(2) td:first-child,#book .hrs tr:nth-child(3) td:first-child,#book .hrs tr:nth-child(6) td:first-child{border-left-color:#2f9a7f}
+#services,#faq{border-top:6px solid;border-image:linear-gradient(90deg,#ff6b6b,#0f6e7a,#bfe9e6) 1}
+#services h2::after,#faq h2::after{content:"";display:block;width:90px;height:5px;border-radius:5px;background:linear-gradient(90deg,#ff6b6b,#bfe9e6);margin-top:14px}
+#services .card{--c:#ff6b6b;position:relative;overflow:hidden;border-top:6px solid var(--c);transition:background .35s,transform .35s,box-shadow .35s}
+#services .card:nth-child(2){--c:#bfe9e6}#services .card:nth-child(3){--c:#f5a623}#services .card:nth-child(4){--c:#2f9a7f}#services .card:nth-child(5){--c:#7cc4ff}#services .card:nth-child(6){--c:#ff9ec4}
+#services .card::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:0;background:var(--c);transition:width .4s}
+#services .card:hover{background:color-mix(in srgb,var(--c) 24%,#12384b);transform:translateY(-6px);box-shadow:0 20px 44px color-mix(in srgb,var(--c) 38%,transparent)}
+#services .card:hover::after{width:100%}
+#services .card:hover h3{color:var(--c)}
+#services .card:hover p{color:#fff}
+#services .card:active{transform:translateY(-2px) scale(.98)}
+#faq{background:linear-gradient(180deg,var(--sand),var(--aqua))}
+#faq details{border-left:6px solid var(--lagoon);box-shadow:0 10px 26px #0d2a3a14;transition:background .3s,transform .3s,box-shadow .3s}
+#faq details:nth-of-type(2){border-left-color:var(--coral)}#faq details:nth-of-type(3){border-left-color:#2f9a7f}#faq details:nth-of-type(4){border-left-color:#f5a623}#faq details:nth-of-type(5){border-left-color:#6a8fd8}
+#faq details:hover{transform:translateX(5px)}
+#faq details[open]{background:var(--aqua);box-shadow:0 14px 34px #0d2a3a26}
+#faq summary::after{color:var(--coral);font-weight:700}.rv cite{display:block;margin-top:10px;font-style:normal;font-weight:600}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,40px);color:var(--text)}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,select,textarea{padding:.8em 1em;border:1px solid var(--line);border-radius:12px;background:var(--sand);width:100%}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.two{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.seg{display:flex;gap:10px;flex-wrap:wrap}
+.seg label{display:block}.seg input{position:absolute;opacity:0;width:1px}
+.seg span{display:block;padding:.7em 1.3em;border:2px solid var(--line);border-radius:99px;cursor:none}
+.seg input:checked+span{background:var(--lagoon);border-color:var(--lagoon);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--coral)}
+.ok{display:none;padding:14px 18px;border-radius:14px;background:var(--aqua);font-weight:500}
+.book{display:grid;gap:clamp(28px,5vw,60px);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.hrs{width:100%;border-collapse:collapse;margin-top:18px}.hrs td{padding:8px 0;border-bottom:1px solid #ffffff22}.hrs td:last-child{text-align:right}
+details{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:12px}
+summary{font-weight:600;cursor:none;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.4rem;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:.8em 0 0}
+footer{background:#071b27;color:#cfe4e6;padding:60px max(22px,6vw) calc(30px + env(safe-area-inset-bottom,0px))}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h3{font-size:1.2rem;color:#fff}footer a{display:block;text-decoration:none;padding:3px 0}footer a:hover{color:var(--coral)}
+.wa{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px #0004}
+.wa svg{width:30px;fill:#fff}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hint b::after{animation:none}nav{transition:none}}
+</style>
+</head>
+<body>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<header>
+<a class="logo" href="#top">YG<i>.</i> Dental Smile</a>
+<div class="links"><a href="#services">Services</a><a href="#results">Results</a><a href="#doctor">Dentist</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a><a href="#contact">Contact</a><a class="bk" href="#book">Book now</a></div>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</header>
+<nav id="menu" aria-label="Main menu">
+<a href="#top">Home</a><a href="#services">Services</a><a href="#results">Before &amp; after</a><a href="#doctor">Your dentist</a><a href="#reviews">Reviews</a><a href="#book">Book a consultation</a><a href="#faq">FAQs</a><a href="#contact">Contact</a>
+<small>12700 SW 128th St, Miami, FL 33186 &middot; (305) 850-8605</small>
+</nav>
+
+<main id="top">
+<div class="film" id="film">
+<div class="stage">
+<!-- To use your AI video: set VIDEO_SRC in the script. Otherwise the illustrated scenes play. -->
+<video id="vid" muted playsinline preload="auto"></video>
+<div class="scene" id="s1"><svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="w1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdeeea"/><stop offset="1" stop-color="#eaf8f4"/></linearGradient></defs><rect width="800" height="500" fill="url(#w1)"/><rect y="380" width="800" height="120" fill="#e9dcc6"/><rect x="520" y="110" width="150" height="270" rx="6" fill="#0f6e7a"/><rect x="535" y="125" width="120" height="240" fill="#9fd8d6"/><circle cx="640" cy="260" r="6" fill="#fff"/><rect x="330" y="150" width="100" height="54" rx="12" fill="#0f6e7a"/><path d="M350 172q30 28 60 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/><rect x="90" y="300" width="330" height="90" rx="10" fill="#fff"/><rect x="90" y="290" width="330" height="18" rx="8" fill="#ff6b6b"/><rect x="330" y="240" width="70" height="50" rx="4" fill="#0d2a3a"/><path d="M700 380c-30-60-10-120 20-150 10 50 30 90-20 150z M730 380c10-50 40-90 60-100-10 60-20 90-60 100z" fill="#2f9a7f"/><rect x="690" y="375" width="50" height="40" rx="6" fill="#ff6b6b"/><circle cx="285" cy="240" r="34" fill="#f2c9a5"/><rect x="253" y="270" width="64" height="30" rx="12" fill="#0f6e7a"/></svg></div>
+<div class="scene" id="s2"><svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><rect width="800" height="500" fill="#e7f6f3"/><rect x="60" y="60" width="200" height="150" rx="8" fill="#bfe9e6"/><rect y="400" width="800" height="100" fill="#d8e9e6"/><ellipse cx="470" cy="330" rx="190" ry="26" fill="#0d2a3a" opacity=".15"/><rect x="330" y="300" width="280" height="40" rx="20" fill="#0f6e7a"/><path d="M330 300l-30-90q-10-30 20-30h40v120z" fill="#0f6e7a"/><rect x="450" y="340" width="40" height="60" fill="#0d2a3a"/><path d="M560 80v150" stroke="#0d2a3a" stroke-width="8"/><path d="M560 80h80l20 40" stroke="#0d2a3a" stroke-width="8" fill="none"/><ellipse cx="520" cy="250" rx="70" ry="26" fill="#fff6c9"/><circle cx="560" cy="283" r="0" fill="#fff"/><path d="M505 255l-30 45h90z" fill="#fff9d6" opacity=".5"/><circle cx="180" cy="190" r="42" fill="#f2c9a5"/><path d="M142 190q38-60 76 0z" fill="#3a2a1f"/><rect x="150" y="205" width="60" height="28" rx="10" fill="#9fd8d6"/><path d="M120 420v-150q0-50 60-50t60 50v150z" fill="#fff"/><path d="M240 320l90-10" stroke="#fff" stroke-width="26" stroke-linecap="round"/><circle cx="345" cy="310" r="14" fill="#9fd8d6"/><rect x="380" y="270" width="150" height="30" rx="15" fill="#f2c9a5" opacity=".0"/></svg></div>
+<div class="scene" id="s3"><svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g3" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#2c8a96"/><stop offset="1" stop-color="#071b27"/></radialGradient></defs><rect width="800" height="500" fill="url(#g3)"/><path d="M330 150c20-30 60-20 70-10 10-10 50-20 70 10 30 50-10 100-20 150-8 40-14 70-34 70s-10-50-26-50-6 50-26 50-26-30-34-70c-10-50-50-100-20-150z" fill="#fff"/><path d="M350 175c15-15 30-12 40-5" stroke="#cfeeee" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="560" cy="190" r="52" fill="#bfe9e6" stroke="#cfd8dc" stroke-width="10"/><path d="M520 150q30-14 60 0" stroke="#fff" stroke-width="6" fill="none" opacity=".7"/><path d="M596 230l130 150" stroke="#cfd8dc" stroke-width="14" stroke-linecap="round"/><path d="M150 430l180-120" stroke="#cfd8dc" stroke-width="10" stroke-linecap="round"/><path d="M330 310l16-12" stroke="#ff6b6b" stroke-width="10" stroke-linecap="round"/></svg></div>
+<div class="caption">
+<div class="cap" id="c1"><span class="eb">YG Dental Smile &middot; Miami, FL</span><h1>Walk in. Walk out smiling.</h1><p>Smile makeovers in Miami: veneers, implants and whitening, planned around you.</p></div>
+<div class="cap" id="c2" style="opacity:0"><h1>Careful hands, unhurried care.</h1><p>Every treatment is explained before it begins.</p></div>
+<div class="cap" id="c3" style="opacity:0"><h1>Precision down to the last tooth.</h1><p><a class="btn" href="#book">Book your consultation</a></p></div>
+</div>
+<div class="hint"><span>Scroll</span><b></b></div>
+<div class="bar" id="bar"></div>
+</div>
+</div>
+
+<section class="s" id="why"><div class="wrap">
+<h2>Why choose us</h2><p class="lead">A small Miami practice where the dentist you meet is the dentist who treats you.</p>
+<div class="grid" style="margin-top:34px">
+<div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M15 25l6 6 12-14"/></svg><h3>Smile design first</h3><p>We plan the result with you before any treatment starts.</p></div>
+<div class="card"><svg viewBox="0 0 48 48"><path d="M8 14h32v22H8zM8 22h32"/><path d="M14 30h8"/></svg><h3>Flexible financing</h3><p>Monthly payment plans through Sunbit, with a quick online application.</p></div>
+<div class="card"><svg viewBox="0 0 48 48"><path d="M24 6c8 0 14 6 14 14 0 10-14 22-14 22S10 30 10 20C10 12 16 6 24 6z"/><circle cx="24" cy="20" r="5"/></svg><h3>Easy to reach</h3><p>Located at SW 128th St in Miami, open Tuesday, Wednesday and Saturday.</p></div>
+<div class="card"><svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 18a9 9 0 0116-5 9 9 0 0116 5c0 12-16 22-16 22z"/></svg><h3>Gentle by habit</h3><p>Clear steps, honest pricing and no pressure to book anything.</p></div>
+</div></div></section>
+
+<section class="s dark" id="services"><div class="wrap">
+<h2>Services</h2><p class="lead">Cosmetic and restorative care, built around how you want to smile.</p>
+<div class="grid" style="margin-top:34px">
+<div class="card"><h3>Porcelain veneers</h3><p>Reshape colour, length and symmetry with thin custom shells.</p></div>
+<div class="card"><h3>Dental implants</h3><p>Replace missing teeth with a fixed, natural-looking solution.</p></div>
+<div class="card"><h3>Teeth whitening</h3><p>Lift years of stains in a single visit, comfortably.</p></div>
+<div class="card"><h3>Smile makeovers</h3><p>A full plan that combines treatments for one cohesive result.</p></div>
+<div class="card"><h3>Consultations</h3><p>Talk through goals, options, timing and cost with no obligation.</p></div>
+<div class="card"><h3>Follow-up care</h3><p>Check-ins to keep your results healthy and bright.</p></div>
+</div></div></section>
+
+<section class="s" id="results"><div class="wrap">
+<h2>Before &amp; after</h2><p class="lead">Scroll and watch each smile change.</p>
+<div class="grid" style="margin-top:34px" id="bagrid"></div>
+</div></section>
+
+<section class="s dark" id="doctor"><div class="wrap doc">
+<div class="portrait"><svg viewBox="0 0 300 330"><circle cx="150" cy="110" r="62" fill="#f2c9a5"/><path d="M88 108q62-90 124 0z" fill="#2b1d14"/><path d="M30 330v-70q0-70 120-70t120 70v70z" fill="#fff"/><path d="M128 190l22 40 22-40" fill="#bfe9e6"/><path d="M120 128q30 24 60 0" stroke="#b5513d" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+<div><h2>Meet your dentist</h2>
+<p class="lead">At YG Dental Smile, your smile makeover is guided by one dentist from the first conversation to the final polish.</p>
+<p class="lead">Expect a relaxed consultation, a clear plan and results designed to look like you, only brighter.</p>
+<p><a class="btn" href="#book">Meet us at your consultation</a></p></div>
+</div></section>
+
+<section class="s" id="reviews"><div class="wrap">
+<h2>Patient reviews</h2>
+<div class="rv" id="rv"></div>
+<form id="rf"><h3>Share your experience</h3>
+<div class="two"><label>Your name<input name="n" required autocomplete="name"></label>
+<label>Rating<select name="r"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label></div>
+<label>Your review<textarea name="t" rows="3" required></textarea></label>
+<button class="btn" type="submit">Submit review</button></form>
+</div></section>
+
+<section class="s dark" id="book"><div class="wrap book">
+<div><h2>Book your consultation</h2><p class="lead">Tell us what you need and we will confirm by phone or WhatsApp.</p>
+<table class="hrs" aria-label="Opening hours"><tr><td>Monday</td><td>Closed</td></tr><tr><td>Tuesday</td><td>9:00 am &ndash; 5:00 pm</td></tr><tr><td>Wednesday</td><td>9:00 am &ndash; 5:00 pm</td></tr><tr><td>Thursday</td><td>Closed</td></tr><tr><td>Friday</td><td>Closed</td></tr><tr><td>Saturday</td><td>9:00 am &ndash; 5:00 pm</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<p><a href="https://www.google.com/maps/dir/?api=1&destination=12700+Sw+128th+St+MIAMI+FL+33186" target="_blank" rel="noopener">Get directions</a></p></div>
+<form id="bf"><div class="seg" role="radiogroup" aria-label="Visit type"><label><input type="radio" name="v" value="New patient" checked><span>New patient</span></label><label><input type="radio" name="v" value="Follow up"><span>Follow up</span></label></div>
+<div class="two"><label>Full name<input name="n" required autocomplete="name"></label><label>Phone<input name="p" type="tel" required autocomplete="tel"></label></div>
+<div class="two"><label>Email<input name="e" type="email" autocomplete="email"></label><label>Service<select name="s"><option>Veneers</option><option>Implants</option><option>Whitening</option><option>Smile makeover</option><option>Other</option></select></label></div>
+<div class="two"><label>Preferred day<select name="d"><option>Tuesday</option><option>Wednesday</option><option>Saturday</option></select></label><label>Preferred time<input name="t" type="time" min="09:00" max="17:00" value="10:00"></label></div>
+<label>Notes<textarea name="m" rows="2"></textarea></label>
+<button class="btn" type="submit">Request appointment</button>
+<div class="ok" id="bok" role="status"></div></form>
+</div></section>
+
+<section class="s" id="faq"><div class="wrap" style="max-width:820px">
+<h2>FAQs</h2>
+<details><summary>How long do veneers last?</summary><p>With good care, porcelain veneers commonly last ten years or more. We will explain how to look after them.</p></details>
+<details><summary>Is teeth whitening safe?</summary><p>Professional whitening is safe when supervised by a dentist. Some temporary sensitivity is normal.</p></details>
+<details><summary>Do you offer payment plans?</summary><p>Yes. You can apply for monthly financing through Sunbit before your visit.</p></details>
+<details><summary>What happens at the first consultation?</summary><p>We review your goals and health, discuss options and costs, and outline a plan.</p></details>
+<details><summary>When are you open?</summary><p>Tuesday, Wednesday and Saturday, 9:00 am to 5:00 pm.</p></details>
+</div></section>
+</main>
+
+<footer><div class="grid">
+<div><h3>YG Dental Smile</h3><p>Smile makeovers in Miami, Florida.</p></div>
+<div><h3>Quick links</h3><a href="#why">Why choose us</a><a href="#results">Before &amp; after</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a></div>
+<div><h3>Services</h3><a href="#services">Veneers</a><a href="#services">Implants</a><a href="#services">Whitening</a><a href="https://apply.sunbit.com/YGDentalSmile" target="_blank" rel="noopener">Financing</a></div>
+<div id="contact"><h3>Contact</h3><a href="tel:+13058508605">(305) 850-8605</a><a href="mailto:ysygamboa23@yahoo.com">ysygamboa23@yahoo.com</a><a href="https://www.instagram.com/ygdentalsmile/" target="_blank" rel="noopener">@ygdentalsmile</a><span>12700 SW 128th St, Miami, FL 33186</span></div>
+</div><p style="margin-top:36px;opacity:.6">&copy; 2026 YG Dental Smile</p></footer>
+
+<a class="wa" href="https://wa.me/13058508605" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 00-11 19.800L3 29l6.400-2A13 13 0 1016 3zm0 2.300A10.700 10.700 0 11 9.700 24.300l-.4-.3-3.700 1.100 1.200-3.600-.3-.4A10.700 10.700 0 0116 5.300zm-4 5.200c-.3 0-.8.100-1.200.6-.4.500-1.500 1.500-1.500 3.600s1.600 4.200 1.800 4.500c.2.300 3 4.800 7.400 6.500 3.600 1.400 4.300 1.100 5.100 1 .8-.1 2.500-1 2.800-2 .4-1 .4-1.800.2-2-.1-.2-.4-.3-.8-.5l-2.600-1.200c-.4-.1-.6-.2-.9.200l-1.200 1.500c-.2.300-.5.300-.9.100-.4-.2-1.700-.6-3.200-2a11.800 11.800 0 01-2.200-2.700c-.2-.4 0-.6.200-.8l.6-.7c.2-.2.300-.4.400-.7.100-.3.100-.5 0-.7l-1.200-3c-.3-.7-.6-.6-.9-.6z"/></svg></a>
+
+<script>
+// Paste your generated AI video URL/data URI here (zoom: reception > dentist > tools). Leave empty to use the built-in scenes.
+const VIDEO_SRC="";
+const $=s=>document.querySelector(s),clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const PHONE="13058508605";
+// Booking form posts here (needs PHP hosting). Set to "" for WhatsApp only, or to a Formspree URL.
+const FORM_ENDPOINT="form-handler.php";
+/* cursor */
+const cur=$("#cur");let mx=0,my=0,cx=0,cy=0;
+addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+(function f(){cx+=(mx-cx)*.2;cy+=(my-cy)*.2;cur.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(f)})();
+document.addEventListener("mouseover",e=>cur.classList.toggle("big",!!e.target.closest("a,button,summary,.seg span,#services .card")));
+/* menu */
+const bur=$("#burger"),menu=$("#menu");
+function tog(o){menu.classList.toggle("open",o);document.body.classList.toggle("mo",o);bur.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":""}
+bur.onclick=()=>tog(!menu.classList.contains("open"));
+menu.querySelectorAll("a").forEach(a=>a.onclick=()=>tog(false));
+addEventListener("keydown",e=>{if(e.key==="Escape")tog(false)});
+/* scroll film */
+const film=$("#film"),sc=[$("#s1"),$("#s2"),$("#s3")],caps=[$("#c1"),$("#c2"),$("#c3")],vid=$("#vid"),bar=$("#bar");
+const origins=["72% 52%","50% 48%","50% 40%"],zoom=[2.6,2.2,1.5];
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(VIDEO_SRC){vid.src=VIDEO_SRC;vid.style.display="block";sc.forEach(s=>s.style.display="none")}
+function upd(){
+  const r=film.getBoundingClientRect(),p=clamp(-r.top/(r.height-innerHeight),0,1);
+  bar.style.width=p*100+"%";
+  if(VIDEO_SRC&&vid.duration)vid.currentTime=p*vid.duration;
+  const seg=p*3;
+  sc.forEach((s,i)=>{
+    const l=clamp(seg-i,0,1),fadeIn=i===0?1:clamp((seg-i+.25)/.25,0,1),fadeOut=i===2?1:clamp((i+1-seg)/.25,0,1);
+    s.style.opacity=Math.min(fadeIn,fadeOut);
+    s.style.transformOrigin=origins[i];
+    s.style.transform=still?"none":`scale(${1+l*(zoom[i]-1)})`;
+    const a=Math.min(fadeIn,fadeOut)>.6;
+    caps[i].style.opacity=a?1:0;caps[i].style.transform=a?"none":"translateY(20px)";
+    caps[i].style.pointerEvents=a?"auto":"none";
+  });
+}
+/* before/after */
+const teeth=(c,straight,gap)=>{let t="";for(let i=0;i<8;i++){const x=150+i*62,y=straight?250:250+(i%2?10:-6),h=straight?70:(i%3?56:66);t+=`<rect x="${x}" y="${y}" width="${54-(gap?0:0)}" height="${h}" rx="18" fill="${c[i%c.length]}"/>`}return t};
+const smile=(bg,lip,tc,straight)=>`<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"><rect width="800" height="600" fill="${bg}"/><ellipse cx="400" cy="560" rx="460" ry="140" fill="#e8b9a0"/><path d="M90 280q310-170 620 0q-50 190-310 190T90 280z" fill="${lip}"/><path d="M150 285q250-90 500 0q-30 110-250 110t-250-110z" fill="#4b1f24"/>${teeth(tc,straight)}</svg>`;
+const cases=[["Veneers",["#cfb98a","#c8ae7c"],["#fff","#fbfbf8"]],["Whitening",["#d8c27a","#cdb668"],["#fff","#f8fbfb"]],["Smile makeover",["#c7ad77","#d4be8c"],["#fffefa","#f6fafa"]]];
+const g=$("#bagrid");
+cases.forEach((c,i)=>{g.insertAdjacentHTML("beforeend",`<div><div class="ba" data-i="${i}"><div>${smile("#f3dcd0","#c9575f",c[1],false)}</div><div class="aft">${smile("#f3dcd0","#c9575f",c[2],true)}</div><div class="line"></div><em class="l">Before</em><em class="r">After</em></div><p class="bacap">${c[0]} &middot; illustrative placeholder, swap in real patient photos</p></div>`)});
+function ba(){document.querySelectorAll(".ba").forEach(b=>{const r=b.getBoundingClientRect(),p=clamp((innerHeight*.9-r.top)/(innerHeight*.6),0,1);b.querySelector(".aft").style.clipPath=`inset(0 ${100-p*100}% 0 0)`;b.querySelector(".line").style.left=p*100+"%"})}
+/* reviews */
+const R=[["Sample review: replace with a real patient comment about the first visit.","Patient name",5],["Sample review: replace with a real comment about veneers or whitening.","Patient name",5],["Sample review: replace with a real comment about the team and care.","Patient name",5]];
+const rv=$("#rv");
+const add=(t,n,s)=>{const q=document.createElement("blockquote"),st=document.createElement("div"),p=document.createElement("p"),c=document.createElement("cite");st.className="st";st.textContent="★".repeat(s)+"☆".repeat(5-s);p.textContent=t;c.textContent=n;q.append(st,p,c);rv.prepend(q)};
+R.slice().reverse().forEach(r=>add(...r));
+$("#rf").onsubmit=e=>{e.preventDefault();const f=e.target;add(f.t.value.trim(),f.n.value.trim(),+f.r.value);f.reset();f.querySelector("button").textContent="Review submitted, thank you"};
+/* booking */
+$("#bf").onsubmit=async e=>{e.preventDefault();const f=e.target,o=$("#bok"),v=f.v.value;
+ const msg=`Hello YG Dental Smile, I would like to book a consultation.\nVisit: ${v}\nName: ${f.n.value}\nPhone: ${f.p.value}\nService: ${f.s.value}\nPreferred: ${f.d.value} ${f.t.value}\nNotes: ${f.m.value}`;
+ const btn=f.querySelector("button[type=submit]");btn.disabled=true;
+ let sent=false;
+ if(FORM_ENDPOINT){try{const r=await fetch(FORM_ENDPOINT,{method:"POST",body:new FormData(f)});sent=r.ok}catch(_){}}
+ btn.disabled=false;
+ o.style.display="block";
+ o.textContent=sent?"Thank you! Your request was sent. We will confirm your time shortly.":"Request ready. Send it on WhatsApp so we can confirm your time.";
+ const a=document.createElement("a");a.className="btn";a.style.marginLeft="10px";a.textContent="Send on WhatsApp";a.target="_blank";a.rel="noopener";a.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;o.append(a);
+ if(sent)f.reset()};
+/* portrait screens (phones): crop each scene around its subject instead of the dead centre */
+const FOCUS=[380,255,450];
+function vb(){const a=innerWidth/innerHeight,port=a<1.25;sc.forEach((s,i)=>{const v=s.querySelector("svg");if(!port){v.setAttribute("viewBox","0 0 800 500");return}const w=Math.min(800,500*a),x=clamp(FOCUS[i]-w/2,0,800-w);v.setAttribute("viewBox",x+" 0 "+w+" 500")})}
+addEventListener("scroll",()=>{upd();ba()},{passive:true});addEventListener("resize",()=>{vb();upd();ba()});vb();upd();ba();
+</script>
+</body>
+</html>
